@@ -1,0 +1,40 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/wsl?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 19911029
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    #username: wsl
+    #password: 19911029
+    username: guest
+    password: guest
+    publisher-confirms: true #支持发布确认
+    publisher-returns: true  #支持发布返回
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual #采用手动应答
+        concurrency: 1 #指定最小的消费者数量
+        max-concurrency: 1 #指定最大的消费者数量
+        retry:
+          enabled: true #是否支持重试
+
+
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
