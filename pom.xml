@@ -33,6 +33,9 @@
         <lombok.version>1.16.18</lombok.version>
         <mysql-connector.version>5.1.44</mysql-connector.version>
         <wslexample.version>1.0.0-SNAPSHOT</wslexample.version>
+        <jjwt-version>0.9.1</jjwt-version>
+        <auth0-jet-version>3.4.0</auth0-jet-version>
+        <guava-version>14.0</guava-version>
     </properties>
 
     <dependencyManagement>
@@ -114,6 +117,25 @@
                 <artifactId>spring-cloud-starter-eureka-server</artifactId>
                 <version>${springboot.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>${auth0-jet-version}}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava-version}</version>
+            </dependency>
+
 
         </dependencies>
     </dependencyManagement>
