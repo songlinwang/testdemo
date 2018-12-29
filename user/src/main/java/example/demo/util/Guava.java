@@ -22,6 +22,8 @@ public class Guava {
         System.out.println(joinResult);
     }
 
+    // 将key相同的value放到一个list里面  以前的写法是 if(contains(key)) list.add  else new List.add(key)
+    // 直接交给multimap
     public static void multiMapUtil() {
         Multimap<String, String> multimap = ArrayListMultimap.create();
         for (int i = 0; i < 20; i++) {
@@ -44,7 +46,7 @@ public class Guava {
             System.out.println(ss[i]);
         }
         Iterator<String> stringIterator = Splitter.on(',').trimResults().omitEmptyStrings().split(spl).iterator();
-        while(stringIterator.hasNext()){
+        while (stringIterator.hasNext()) {
             System.out.println("****");
             System.out.println(stringIterator.next());
         }
